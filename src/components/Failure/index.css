@@ -1,0 +1,45 @@
+.failure-bg {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  background: linear-gradient(
+    91.08deg,
+    #dbbcc4 9.68%,
+    #f3dfd8 32.98%,
+    #d8bfd0 75.7%,
+    #b7b1d5 99.11%
+  );
+}
+.card-adjust {
+  min-height: 100vh;
+}
+.failure-img {
+  width: 677px;
+  height: 364px;
+}
+.swr {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 44px;
+}
+.swr-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+}
+.retry-btn {
+  background-color: #0ea5e9;
+  color: #f8fafc;
+  width: 76px;
+  height: 40px;
+  padding: 8px 20px 8px 20px;
+  gap: 10px;
+  border-radius: 4px;
+  border: 0px;
+  cursor: pointer;
+  outline: none;
+}

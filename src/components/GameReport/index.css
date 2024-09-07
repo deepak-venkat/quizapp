@@ -1,0 +1,117 @@
+.game-report-cont {
+  min-height: 90vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  background: linear-gradient(
+    91.08deg,
+    #dbbcc4 9.68%,
+    #f3dfd8 32.98%,
+    #d8bfd0 75.7%,
+    #b7b1d5 99.11%
+  );
+}
+.report-card {
+  margin: 25px;
+  min-height: 80vh;
+  width: 80vw;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  margin: 50px 0px 50px 0px;
+  display: flex;
+  padding: 25px;
+  flex-direction: column;
+}
+.report-box {
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+}
+.report-circle {
+  width: 166px;
+  height: 166px;
+  border-radius: 50%;
+  border: 5px solid #0ea5e9;
+  margin-right: 40px;
+}
+.circle-text {
+  font-size: 40px;
+  color: #475569;
+  font-weight: 700;
+  line-height: 75px;
+  text-align: center;
+}
+.circle-text span {
+  font-weight: 600;
+  font-size: 50px;
+  color: #0ea5e9;
+  text-align: center;
+}
+.report-categories {
+  display: flex;
+  flex-direction: column;
+}
+.category {
+  display: flex;
+  gap: 5px;
+  margin-bottom: -20px;
+}
+.category-img {
+  width: 24px;
+  height: 24px;
+  margin-top: 22px;
+  margin-right: 5px;
+}
+.category-text {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: center;
+}
+.question-adjust {
+  margin-bottom: 10px;
+}
+.options-adjust {
+  margin-bottom: 20px;
+}
+.unattempted-cont {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.unattempted-head {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 48px;
+  color: #0ea5e9;
+  padding: 10px;
+}
+.unattempted-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+.question-options {
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.attempted-all-cont {
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.attempted-text {
+  color: #0ea5e9;
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 48px;
+}
