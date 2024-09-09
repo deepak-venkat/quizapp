@@ -1,11 +1,11 @@
 import './index.css'
-import {useNavigate} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import {useState, useEffect} from 'react'
 import Header from '../Header'
 
 const Home = () => {
   const [showWarning, setShowWarning] = useState(false)
-  const navigate = useNavigate()
+  const history = useHistory()
   const handleStart = () => {
     setShowWarning(true)
   }
@@ -13,11 +13,12 @@ const Home = () => {
   useEffect(() => {
     if (showWarning) {
       const timer = setTimeout(() => {
-        navigate('/quiz-game', {replace: true})
+        history.replace('/quiz-game')
       }, 2000) // Redirect after 3 seconds
       return () => clearTimeout(timer) // Clear the timer if the component unmounts
     }
-  }, [showWarning, navigate])
+    return null
+  }, [showWarning])
 
   return (
     <>
@@ -29,7 +30,7 @@ const Home = () => {
             alt="start quiz game"
             className="start-image"
           />
-          <h1 className="question">
+          <h1 className="question-home">
             How Many Of These Questions Do You Actually Know?
           </h1>
           <p className="description">

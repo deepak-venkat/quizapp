@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   background: linear-gradient(
     91.08deg,
     #dbbcc4 9.68%,
@@ -31,16 +31,10 @@
   margin-bottom: 10px;
 }
 .logo-icon {
-  width: 40px;
-  height: 35px;
-  color: #0ea5e9;
-  margin-bottom: -18px;
+  width: 96px;
+  height: 70px;
 }
-.logo-text {
-  font-size: 22px;
-  font-weight: 700;
-  color: #0ea5e9;
-}
+
 .label-1 {
   font-weight: 700;
   font-size: 15px;

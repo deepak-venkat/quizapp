@@ -1,6 +1,6 @@
 import './index.css'
-import {useNavigate} from 'react-router-dom'
-import {TailSpin} from 'react-loader-spinner'
+import {useHistory} from 'react-router-dom'
+import {Loader} from 'react-loader-spinner'
 import {useState, useEffect} from 'react'
 import Header from '../Header'
 
@@ -18,7 +18,7 @@ const QuizGame = () => {
   })
   const [totalScore, setTotalScore] = useState(0)
   const [unansweredList, setUnansweredList] = useState([])
-  const navigate = useNavigate()
+  const history = useHistory()
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,7 +28,7 @@ const QuizGame = () => {
           const data = await response.json()
           setQuestions(data.questions)
         } else {
-          navigate('/failure')
+          history.replace('/failure')
         }
       } catch (error) {
         console.log(error)
@@ -100,7 +100,7 @@ const QuizGame = () => {
   }
 
   const handleSubmit = () => {
-    navigate('/game-results', {
+    history.push('/game-results', {
       state: {totalScore, unansweredList},
       replace: true,
     })
@@ -126,6 +126,7 @@ const QuizGame = () => {
           return (
             <li key={option.id}>
               <button
+                type="button"
                 className={`option-btn ${
                   isCorrect || isDisplayCrctOnWrong ? 'correct-btn' : ''
                 } ${isWrong ? 'wrong-btn' : ''}  `}
@@ -175,6 +176,7 @@ const QuizGame = () => {
             <li key={option.id}>
               <button
                 className="img-btn"
+                type="button"
                 onClick={() => handleSelect(option.id)}
               >
                 <img
@@ -273,8 +275,8 @@ const QuizGame = () => {
       <div className="quiz-game">
         {isLoading ? (
           <div className="card loader-cont">
-            <div data-testid="loader">
-              <TailSpin color="#0ea5e9" height={35} width={35} />
+            <div className="loader-container" data-testid="loader">
+              <Loader type="ThreeDots" color="#263868" height={50} width={50} />
             </div>
           </div>
         ) : (

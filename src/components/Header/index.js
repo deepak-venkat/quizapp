@@ -1,32 +1,34 @@
 import './index.css'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faQ} from '@fortawesome/free-solid-svg-icons'
 import {MdLogout} from 'react-icons/md'
-import {useNavigate} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 const Header = () => {
-  const navigate = useNavigate()
+  const history = useHistory()
   const handleLogout = () => {
     Cookies.remove('jwtToken')
-    navigate('/login')
+    history.push('/login')
   }
   return (
     <nav className="nav-cont">
       <div className="header">
         <div className="logo">
-          <FontAwesomeIcon
-            icon={faQ}
+          <img
+            src="https://imgtr.ee/images/2024/09/08/04ae4d6897f9b101acbb63b50658a600.png"
             className="logo-icon"
-            alt="website logo"
+            alt="logo"
           />
-          <p className="logo-text">NXT Quiz</p>
         </div>
         <div>
           <button className="logout-btn" type="button" onClick={handleLogout}>
             Logout
           </button>
-          <button className="icon-btn" type="button" onClick={handleLogout}>
+          <button
+            className="icon-btn"
+            type="button"
+            onClick={handleLogout}
+            aria-label="Logout"
+          >
             <MdLogout className="logout-icon" />
           </button>
         </div>

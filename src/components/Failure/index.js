@@ -8,7 +8,7 @@ const Failure = () => (
       <div className="card card-adjust">
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-assess-failure-img.png"
-          alt="failure view"
+          alt="not found"
           className="failure-img"
         />
         <p className="swr">Something went wrong</p>

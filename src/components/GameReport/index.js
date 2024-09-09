@@ -18,7 +18,10 @@ const GameReport = () => {
 
         return (
           <li key={option.id}>
-            <button className={`option-btn ${isCorrect ? 'correct-btn' : ''}`}>
+            <button
+              type="button"
+              className={`option-btn ${isCorrect ? 'correct-btn' : ''}`}
+            >
               {String.fromCharCode(65 + index)}. {option.text}
             </button>
             {isCorrect && (
@@ -40,7 +43,7 @@ const GameReport = () => {
         const isCorrect = option.is_correct === 'true'
         return (
           <li key={option.id}>
-            <button className="img-btn">
+            <button className="img-btn" type="button">
               <img
                 src={option.image_url}
                 alt={option.text}

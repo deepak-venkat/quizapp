@@ -80,3 +80,21 @@
   cursor: pointer;
   outline: none;
 }
+@media screen and (max-width: 767px) {
+  .lose-img {
+    width: 189px;
+    height: 141.52px;
+  }
+  .res-text {
+    font-size: 18px;
+  }
+  .res-percent {
+    font-size: 18px;
+  }
+  .success-text {
+    font-size: 18px;
+  }
+  .attempted-crct {
+    font-size: 16px;
+  }
+}

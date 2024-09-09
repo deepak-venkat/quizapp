@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   background: linear-gradient(
     91.08deg,
     #dbbcc4 9.68%,
@@ -30,7 +30,7 @@
   height: 340px;
   margin-bottom: 5px;
 }
-.question {
+.question-home {
   font-size: 24px;
   font-weight: 600;
   line-height: 32px;
@@ -80,7 +80,7 @@
     width: 189px;
     height: 133.04px;
   }
-  .question {
+  .question-home {
     font-size: 16px;
   }
   .description {

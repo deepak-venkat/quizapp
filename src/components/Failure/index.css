@@ -43,3 +43,11 @@
   cursor: pointer;
   outline: none;
 }
+@media screen and (max-width: 767px) {
+  .swr {
+    font-size: 20px;
+  }
+  .swr-text {
+    font-size: 16px;
+  }
+}

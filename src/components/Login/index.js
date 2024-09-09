@@ -1,8 +1,6 @@
 import './index.css'
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faQ} from '@fortawesome/free-solid-svg-icons'
 import {useState} from 'react'
-import {useNavigate, Navigate} from 'react-router-dom'
+import {useHistory, Redirect} from 'react-router-dom'
 import Cookies from 'js-cookie'
 
 const Login = () => {
@@ -11,10 +9,10 @@ const Login = () => {
   const [isPasswordVisible, setPasswordVisible] = useState(false)
   const [isError, setIsError] = useState(false)
   const [errMsg, setErrMsg] = useState('')
-  const navigate = useNavigate()
+  const history = useHistory()
 
   if (Cookies.get('jwtToken')) {
-    return <Navigate to="/" replace />
+    return <Redirect to="/" />
   }
 
   const handleLogin = async event => {
@@ -34,11 +32,11 @@ const Login = () => {
       if (response.ok) {
         Cookies.set('jwtToken', data.jwt_token, {expires: 7})
         setIsError(false)
-        navigate('/')
+        history.replace('/')
       } else {
-        const {error_msg} = data
+        const err = data.error_msg
         setIsError(true)
-        setErrMsg(error_msg)
+        setErrMsg(err)
       }
     } catch (error) {
       console.log(error)
@@ -55,12 +53,11 @@ const Login = () => {
     <div className="form-cont">
       <form className="login-form" onSubmit={handleLogin}>
         <div className="logo">
-          <FontAwesomeIcon
-            icon={faQ}
+          <img
+            src="https://imgtr.ee/images/2024/09/08/04ae4d6897f9b101acbb63b50658a600.png"
             className="logo-icon"
-            alt="login website logo"
+            alt="logo"
           />
-          <p className="logo-text">NXT Quiz</p>
         </div>
         <div className="input-box">
           <label htmlFor="username" className="label-1">
@@ -68,7 +65,7 @@ const Login = () => {
           </label>
           <input
             type="text"
-            placeholder="Enter 'deepak'"
+            placeholder="Enter Username"
             id="username"
             className="input"
             value={username}
@@ -81,7 +78,7 @@ const Login = () => {
           </label>
           <input
             type={isPasswordVisible ? 'text' : 'password'}
-            placeholder="Enter 'lightstar@1'"
+            placeholder="Enter Password"
             id="password"
             className="input"
             value={password}

@@ -1,5 +1,5 @@
 import './index.css'
-import {useLocation, useNavigate} from 'react-router-dom'
+import {useLocation, useHistory} from 'react-router-dom'
 import Header from '../Header'
 
 const GameResult = () => {
@@ -8,14 +8,14 @@ const GameResult = () => {
     totalScore: 0,
     unansweredList: [],
   }
-  const isWon = totalScore >= 5
+  const isWon = totalScore > 5
   const percentage = (totalScore / 10) * 100
-  const navigate = useNavigate()
+  const history = useHistory()
 
   const handleReport = () => {
-    navigate('/game-report', {
+    history.replace({
+      pathname: '/game-report',
       state: {unansweredList, totalScore},
-      replace: true,
     })
   }
 
@@ -43,7 +43,7 @@ const GameResult = () => {
           <p className="attempted-crct">
             You attempted {totalScore} out of 10 questions as correct.
           </p>
-          <button className="report-btn" onClick={handleReport}>
+          <button className="report-btn" type="button" onClick={handleReport}>
             Report
           </button>
         </div>
